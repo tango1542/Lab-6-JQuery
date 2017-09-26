@@ -46,11 +46,15 @@
     function update() {
       var viz = $(".visited").length;
       var notViz = $(".place").length;
+      var subViz = (notViz-viz);
       console.log(viz);
       console.log(notViz);
+      console.log(subViz);
       $("#total_visited").html(viz);
-      $("#total_not_visited").html(notViz-viz);
-      if()
+      $("#total_not_visited").html(subViz);
+      if(subViz==0) {
+      alert("You have visited all of the places!")
+    }
     };
 
     });
