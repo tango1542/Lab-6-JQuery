@@ -9,7 +9,8 @@
 
 <h1>Add or remove items from to do list</h1>
 <input id="pass_input" type="text" name="input_name" value="">
-<button id="addIt">Add items to this list</button>
+<br><br><button id="addIt">Add items to this list</button>
+<br><br><button id="btnDone">Removed Completed Tasks</button>
 
 <div>
 <ul id="addedItems">
@@ -35,6 +36,12 @@ $(function(){
     $(this).toggleClass("done");
 
   });
+
+  $("#btnDone").click(function() {
+    $(".done").fadeOut(500);
+
+  });
+
 
   // $(".place").click(function() {
   //   $(this).toggleClass("visited");

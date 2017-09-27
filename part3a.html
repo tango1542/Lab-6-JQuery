@@ -9,7 +9,8 @@
 
 <h1>Add or remove items from to do list</h1>
 <input id="pass_input" type="text" name="input_name" value="">
-<button id="addIt">Add items to this list</button>
+<br><br><button id="addIt">Add items to this list</button>
+<br><br><button id="btnDone">Removed Completed Tasks</button>
 
 <div>
 <ul id="addedItems">
@@ -19,6 +20,16 @@
   <li class="regular">How are you</li>
 </ul>
 </div>
+<table id = "itemTable" style = "width:30%">
+  <tr>
+    <th>Completed Tasks</th>
+    <th>Date Completed</th>
+  </tr>
+  <!-- <tr>
+  <td id="addlist"></td>
+  <td id="addlist2"><div id= "colourss"</div></td>
+  </tr> -->
+</table>
 <script>
 
 $(function(){
@@ -35,6 +46,18 @@ $(function(){
     $(this).toggleClass("done");
 
   });
+
+  $("#btnDone").click(function() {
+    $(".done").fadeOut(500);
+    var g=$(".done").length;
+    console.log(g);
+    var r=$(".done").text();
+    console.log(r);
+    $("#itemTable tr:last").after("<tr><td>"+r+"</td><td>"+r+"</td></tr>")
+    // $("<tr><td>"Hello"</td></tr>").appendTo("#itemTable tbody");
+
+  });
+
 
   // $(".place").click(function() {
   //   $(this).toggleClass("visited");
