@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="lab6.css">
+<title>Lab 6 Part 1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Add or remove items from to do list</h1>
+<input id="pass_input" type="text" name="input_name" value="">
+<button id="addIt">Add items to this list</button>
+
+<div>
+<ul id="addedItems">
+  <li class="regular">Hi</li>
+  <li class="regular">Hello</li>
+  <li class="regular">Hi there</li>
+  <li class="regular">How are you</li>
+</ul>
+</div>
+<script>
+
+$(function(){                     //This is creating a new list item.  I am having trouble getting a new list item to have a certain class
+  $("#addIt").click(function() {
+    // x = "#pass_input";
+    y = $("#pass_input").val();
+    // z = $(y).addClass("regular");
+    // console.log(x);
+    console.log(y);
+
+    $("ul").append("<li class='regular'>"+y+"</li>")  //This part is actually appending the user input, which has been set as the variable y.  Trying to get it to automatically get the class of regular.  It does not seem to be working
+  });
+
+  $("li").click(function() {  //this is toggling between the classes of done and regular
+    $(this).toggleClass("done");
+  });
+
+  // $(".place").click(function() {
+  //   $(this).toggleClass("visited");
+  //
+  // });
+
+})
+
+
+//   function addtolist() {
+// var mylistelement=document.getElementById("addlist");
+// var newlistitem=document.createElement("li");
+// newlistitem.innerHTML=pass_input.value;
+// mylistelement.appendChild(newlistitem);
+//   }
+//   function clear_text() {
+//     document.getElementById('pass_input').value = "";
+//   }
+//
+//   function validate() {
+//     var user_input=document.getElementById('pass_input').value;
+//     if (user_input=="") {
+//       end;
+//     }
+//     else if (user_input.length>50) {
+//           alert("Input canregular be greater than 50 characters");
+//           clear_text()
+//           end;
+
+</script>
+</body>
+</html>

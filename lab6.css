@@ -1,0 +1,13 @@
+h1 {
+color: white;
+background-color: black;
+}
+
+.done {
+  background-color: lightgray;
+  text-decoration: line-through;
+}
+
+.regular {
+  color: red;
+}
