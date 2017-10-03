@@ -13,56 +13,32 @@
 
 <div>
 <ul id="addedItems">
-  <li class="regular">Hi</li>
-  <li class="regular">Hello</li>
-  <li class="regular">Hi there</li>
-  <li class="regular">How are you</li>
+  <li class="regular">Wash the dishes</li>  <!--Sample tasks-->
+  <li class="regular">Do the laundry</li>
+  <li class="regular">Take out the trash</li>
+  <li class="regular">Clean the mirrors</li>
 </ul>
 </div>
 <script>
 
 $(function(){
-              //This is creating a new list item.  I am having trouble getting a new list item to have a certain class
-  $("#addIt").click(function() {
-    y = $("#pass_input").val();
-    console.log(y);
-    $("ul").append("<li class='regular'>"+y+"</li>")  //This part is actually appending the user input, which has been set as the variable y.  Trying to get it to automatically get the class of regular.  It does not seem to be working
 
-
-  });
-
-  $("li").click(function() {  //this is toggling between the classes of done and regular
-    $(this).toggleClass("done");
+  $("#addIt").click(function() {  //This section is taking the user input and addinto the #addIt ul.
+  y = $("#pass_input").val();
+$("#addedItems").append("<li class='regular'>"+y+"</li>");
+$("#pass_input").val('');
 
   });
 
-  // $(".place").click(function() {
-  //   $(this).toggleClass("visited");
-  //
-  // });
+
+  $("#addedItems").on("click",".regular",function() {  //This part took me forever.  Needed to use the on() method to get the DOM to update after dynamic change
+    $(this).toggleClass("done regular");
+  });
+  $("#addedItems").on("click",".done",function() {  //I had to put both toggle statements in here to get it to properly toggle.  There is a simple easy way to do this, but I played with it for a while, and this was the only way that the toggle was working properly.
+    $(this).toggleClass("done regular");
+  });
 
 })
-
-
-//   function addtolist() {
-// var mylistelement=document.getElementById("addlist");
-// var newlistitem=document.createElement("li");
-// newlistitem.innerHTML=pass_input.value;
-// mylistelement.appendChild(newlistitem);
-//   }
-//   function clear_text() {
-//     document.getElementById('pass_input').value = "";
-//   }
-//
-//   function validate() {
-//     var user_input=document.getElementById('pass_input').value;
-//     if (user_input=="") {
-//       end;
-//     }
-//     else if (user_input.length>50) {
-//           alert("Input canregular be greater than 50 characters");
-//           clear_text()
-//           end;
 
 </script>
 </body>

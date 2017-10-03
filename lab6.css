@@ -4,15 +4,34 @@ background-color: black;
 }
 
 .done {
-  /*color: blue;*/
-  background-color: lightgray;
+  margin-right: 70em;
+  margin-top: .3em;
+  margin-bottom: .3em;
+  text-indent: 1em;
+  color: white;
+  background-color: black;
+  opacity: .4;
   text-decoration: line-through;
-  color: green;
+
 }
 
 .regular {
-  color: red;
+  margin-right: 70em;
+  text-indent: 1em;
+  margin-top: .3em;
+  margin-bottom: .3em;
+  color: white;
+  background-color: black;
 }
 
 table, tr, th, td {
     border: 1px solid black;
+}
+
+#btnDone {
+  margin-left: 3em;
+}
+
+#pass_input {
+  margin-left: 3em;
+}
